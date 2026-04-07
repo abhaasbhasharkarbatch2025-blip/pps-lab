@@ -1,0 +1,35 @@
+def find_combinations():
+    try:
+        # Input: Single line with three space-separated integers
+        line = input()
+        if not line:
+            return
+        
+        # Capture digits as strings to preserve formatting (like leading zeros)
+        digits = line.split()
+        
+        if len(digits) != 3:
+            return
+
+        a, b, c = digits
+
+        # Define the 6 possible arrangements based on indices
+        combinations = [
+            a + b + c,
+            a + c + b,
+            b + a + c,
+            b + c + a,
+            c + a + b,
+            c + b + a
+        ]
+
+        # Print each combination on a new line
+        for combo in combinations:
+            print(combo)
+
+    except EOFError:
+        pass
+
+if __name__ == "__main__":
+    find_combinations()
+
