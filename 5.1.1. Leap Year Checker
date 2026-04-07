@@ -1,0 +1,21 @@
+def check_leap_year():
+    try:
+        # Input: Single line containing an integer
+        year = int(input())
+
+        # Logic: 
+        # 1. Divisible by 400 is a leap year
+        # 2. Divisible by 100 but not 400 is NOT a leap year
+        # 3. Divisible by 4 but not 100 is a leap year
+        if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):
+            print("Leap year")
+        else:
+            print("Not a leap year")
+            
+    except ValueError:
+        # Handles cases where input is not a valid integer
+        pass
+
+if __name__ == "__main__":
+    check_leap_year()
+
