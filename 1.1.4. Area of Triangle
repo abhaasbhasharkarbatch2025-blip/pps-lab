@@ -1,0 +1,12 @@
+# Read the base from the first line of input and convert it to a float
+base = float(input())
+
+# Read the height from the second line of input and convert it to a float
+height = float(input())
+
+# Calculate the area using the formula (1/2) * base * height
+area = 0.5 * base * height
+
+# Output the area formatted to two decimal places
+print(f"{area:.2f}")
+
