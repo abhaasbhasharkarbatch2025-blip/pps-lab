@@ -1,0 +1,18 @@
+def convert_celsius_to_fahrenheit():
+    try:
+        # Input: Single line containing a float value
+        celsius = float(input())
+        
+        # Calculation: F = (C * 9/5) + 32
+        fahrenheit = (celsius * 9/5) + 32
+        
+        # Output: Fahrenheit value formatted to 2 decimal places
+        print(f"{fahrenheit:.2f}")
+        
+    except ValueError:
+        # Handles cases where input is not a valid number
+        pass
+
+if __name__ == "__main__":
+    convert_celsius_to_fahrenheit()
+
