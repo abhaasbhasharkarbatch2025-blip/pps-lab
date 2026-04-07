@@ -1,0 +1,23 @@
+def set_operations():
+    # Input Format: Prompts for space-separated integers
+    # The prompt string includes the trailing space as specified
+    set_a_input = input("Set A: ").split()
+    set_b_input = input("Set B: ").split()
+
+    # Convert the list of strings to a set of integers
+    A = set(map(int, set_a_input))
+    B = set(map(int, set_b_input))
+
+    # Perform set operations
+    union_res = A | B
+    intersection_res = A & B
+    difference_res = A - B
+
+    # Output Format: Display results with specific labels
+    print(f"Union: {union_res}")
+    print(f"Intersection: {intersection_res}")
+    print(f"Difference: {difference_res}")
+
+if __name__ == "__main__":
+    set_operations()
+
