@@ -1,0 +1,9 @@
+# Read the marks as an integer from standard input
+marks = int(input())
+
+# Check if marks are 40 or above
+if marks >= 40:
+    print("Pass")
+else:
+    print("Fail")
+
