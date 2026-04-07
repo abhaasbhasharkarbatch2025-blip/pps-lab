@@ -1,0 +1,46 @@
+def multiply_matrices():
+    try:
+        # Input Dimension
+        dim_input = input("dimension: ").strip()
+        if not dim_input:
+            return
+        n = int(dim_input)
+
+        # Input First Matrix
+        print("first matrix:")
+        matrix_a = []
+        for _ in range(n):
+            row = list(map(int, input().split()))
+            matrix_a.append(row)
+
+        # Input Second Matrix
+        print("second matrix:")
+        matrix_b = []
+        for _ in range(n):
+            row = list(map(int, input().split()))
+            matrix_b.append(row)
+
+        # Initialize Resultant Matrix with zeros
+        result = [[0 for _ in range(n)] for _ in range(n)]
+
+        # Perform Matrix Multiplication
+        # row of matrix_a
+        for i in range(n):
+            # column of matrix_b
+            for j in range(n):
+                # element of row/column
+                for k in range(n):
+                    result[i][j] += matrix_a[i][k] * matrix_b[k][j]
+
+        # Output Resultant Matrix
+        print("Resultant Matrix:")
+        for row in result:
+            # Print row elements separated by space
+            print(*(row))
+
+    except (ValueError, EOFError):
+        pass
+
+if __name__ == "__main__":
+    multiply_matrices()
+
