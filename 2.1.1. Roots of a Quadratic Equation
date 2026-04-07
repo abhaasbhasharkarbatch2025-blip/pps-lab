@@ -1,0 +1,42 @@
+import math
+
+def find_roots():
+    # Read coefficients a, b, and c from a single line of input
+    try:
+        # Use a silent input (no prompt string) to avoid output mismatch
+        line = input()
+        if not line:
+            return
+        a, b, c = map(float, line.split())
+        
+        # Calculate the discriminant
+        discriminant = b**2 - 4*a*c
+        
+        if discriminant > 0:
+            # Roots are real and different
+            r1 = (-b + math.sqrt(discriminant)) / (2 * a)
+            r2 = (-b - math.sqrt(discriminant)) / (2 * a)
+            # Output in descending order or as calculated; following format:
+            print(f"root1 = {r1:.2f}")
+            print(f"root2 = {r2:.2f}")
+            
+        elif discriminant == 0:
+            # Roots are real and the same
+            root = -b / (2 * a)
+            print(f"root1 = root2 = {root:.2f}")
+            
+        else:
+            # Roots are imaginary
+            real_part = -b / (2 * a)
+            imag_part = math.sqrt(-discriminant) / (2 * a)
+            print(f"root1 = {real_part:.2f}+{imag_part:.2f}i")
+            print(f"root2 = {real_part:.2f}-{imag_part:.2f}i")
+            
+    except EOFError:
+        pass
+    except ValueError:
+        pass
+
+if __name__ == "__main__":
+    find_roots()
+
