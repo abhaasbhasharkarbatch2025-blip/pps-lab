@@ -1,0 +1,49 @@
+def is_leap(year):
+    return (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0)
+
+def get_next_date():
+    try:
+        # Input: Day, Month, Year on separate lines
+        d = int(input())
+        m = int(input())
+        y = int(input())
+
+        # 1. Validation
+        if y <= 0 or m < 1 or m > 12:
+            print("Invalid Date")
+            return
+
+        if m in [1, 3, 5, 7, 8, 10, 12]:
+            max_days = 31
+        elif m in [4, 6, 9, 11]:
+            max_days = 30
+        elif m == 2:
+            max_days = 29 if is_leap(y) else 28
+        
+        if d < 1 or d > max_days:
+            print("Invalid Date")
+            return
+
+        # 2. Increment Logic
+        if d < max_days:
+            d += 1
+        else:
+            d = 1
+            if m == 12:
+                m = 1
+                y += 1
+            else:
+                m += 1
+
+        # 3. Output Format: DD-MM-YYYY with leading zeros
+        # :02d ensures that 3 becomes 03
+        print(f"{d:02d}-{m:02d}-{y}")
+
+    except (EOFError, ValueError):
+        # Handle cases where input is not an integer or is missing
+        pass
+
+if __name__ == "__main__":
+    get_next_date()
+
+
