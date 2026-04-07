@@ -1,0 +1,28 @@
+def calculate_factorial():
+    try:
+        # Input: A single line containing an integer n
+        line = input()
+        if not line:
+            return
+        n = int(line)
+
+        # Factorial is not defined for negative numbers
+        if n < 0:
+            return 
+
+        # Initialize result to 1 (handles the case for n=0)
+        factorial = 1
+        
+        # Loop from 1 to n (inclusive)
+        for i in range(1, n + 1):
+            factorial *= i
+            
+        # Output: The calculated factorial
+        print(factorial)
+            
+    except ValueError:
+        pass
+
+if __name__ == "__main__":
+    calculate_factorial()
+
