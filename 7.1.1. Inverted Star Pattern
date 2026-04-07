@@ -1,0 +1,20 @@
+def print_inverted_triangle():
+    try:
+        # Input: Single line containing an integer n
+        line = input()
+        if not line:
+            return
+        n = int(line)
+
+        # Loop from n down to 1
+        for i in range(n, 0, -1):
+            # Print i stars for the current row
+            print("*" * i)
+            
+    except ValueError:
+        # Handles cases where input is not a valid integer
+        pass
+
+if __name__ == "__main__":
+    print_inverted_triangle()
+
