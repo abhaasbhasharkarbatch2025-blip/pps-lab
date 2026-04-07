@@ -1,0 +1,11 @@
+# Read input without a prompt string to satisfy automated test requirements
+side_input = input()
+
+# Convert the input to an integer
+side = int(side_input)
+
+# Calculate the area (side squared)
+area = side * side
+
+# Output only the result
+print(area)
