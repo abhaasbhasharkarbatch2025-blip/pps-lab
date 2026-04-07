@@ -1,0 +1,36 @@
+def is_prime(num):
+    """Helper function to check if a number is prime."""
+    if num < 2:
+        return False
+    # Check for factors from 2 up to the square root of the number
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def print_prime_range():
+    try:
+        # Input Format: Start and End integers on separate lines
+        start = int(input())
+        end = int(input())
+
+        primes_found = []
+
+        # Iterate through the range (inclusive)
+        for num in range(start, end + 1):
+            if is_prime(num):
+                primes_found.append(num)
+
+        # Output Format
+        if not primes_found:
+            print("No primes")
+        else:
+            for prime in primes_found:
+                print(prime)
+
+    except (ValueError, EOFError):
+        pass
+
+if __name__ == "__main__":
+    print_prime_range()
+
