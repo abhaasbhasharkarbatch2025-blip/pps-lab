@@ -1,0 +1,12 @@
+# Read the length from the first line of input
+length = float(input())
+
+# Read the width from the second line of input
+width = float(input())
+
+# Calculate the area (Area = length * width)
+area = length * width
+
+# Print the area formatted to 2 decimal places
+print(f"{area:.2f}")
+
