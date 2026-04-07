@@ -1,0 +1,36 @@
+def calculate_grades():
+    try:
+        # Input Format: Four space-separated integers
+        line = input()
+        if not line:
+            return
+        marks = list(map(int, line.split()))
+        
+        # Calculate Total and Aggregate
+        total_marks = sum(marks)
+        # Assuming each subject is out of 100, aggregate is the average
+        aggregate = total_marks / 4
+        
+        # Determine Grade based on 2026 academic standards
+        if aggregate > 75:
+            grade = "Distinction"
+        elif 60 <= aggregate <= 75:
+            grade = "First Division"
+        elif 50 <= aggregate < 60:
+            grade = "Second Division"
+        elif 40 <= aggregate < 50:
+            grade = "Third Division"
+        else:
+            grade = "Fail"
+            
+        # Output Format
+        print(total_marks)
+        print(f"{aggregate:.2f}")
+        print(grade)
+            
+    except ValueError:
+        pass
+
+if __name__ == "__main__":
+    calculate_grades()
+
